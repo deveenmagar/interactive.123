@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #3498db; /* Blue color */
+            margin-bottom: 20px;
+        }
+        #game-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: #e74c3c; /* Red color */
+            color: white;
+            border: none;
+        }
+        button:hover {
+            background-color: #c0392b; /* Darker red color on hover */
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+            font-family: "Courier New", monospace;
+            font-weight: normal;
+            color: #27ae60; /* Green color */
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the <span style="color: #e67e22;">Interactive</span> Code Game!</h1>
+    <div id="game-container">
+        <button id="start-button">Start Game</button>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        function print_with_delay(message, delay) {
+            setTimeout(() => {
+                outputDiv.innerHTML += `<p>${message}</p>`;
+                window.scrollTo(0, document.body.scrollHeight); // Scroll to the bottom of the page
+            }, delay * 2000); // Increased delay here
+        }
+
+        const startButton = document.getElementById('start-button');
+        const outputDiv = document.getElementById('output');
+
+        startButton.addEventListener('click', () => {
+            startButton.style.display = 'none';
+            outputDiv.innerHTML = '';
+
+            const user_name = prompt("Hey there! What's your nickname? ");
+            const a = parseInt(prompt("Enter any lucky number: "));
+            const b = parseInt(prompt("Enter any magic number: "));
+
+            const sum_result = a + b;
+            const diff_result = b - a;
+            const mul_result = a * b;
+            const div_result = b / a;
+            const mod_result = a % b;
+
+            print_with_delay("Loading...................⏳", 4); // Increased delay here
+            print_with_delay(`Oooooh, hi <span style="color: #e74c3c;">${user_name}</span>! you're welcome here. It's me your AI buddy created by Deveen. 🎩`, 4); // Increased delay here
+            print_with_delay("Ok, let's see what I can do with your given numbers.", 5); // Increased delay here
+            print_with_delay("Abracadabra! Alakazam! 🎩✨", 4); // Increased delay here
+            print_with_delay("Commencing the cosmic calculation dance.........mmmmmm............👶👶", 2); // Increased delay here
+            print_with_delay(`Behold! The sum of your enchanted numbers is: <span style="color: #3498db;">${sum_result}</span> ✨`, 5); // Increased delay here
+            print_with_delay(`The mystical difference reveals: <span style="color: #e67e22;">${diff_result}</span> 🔍`, 5); // Increased delay here
+            print_with_delay(`The magical product will be: <span style="color: #27ae60;">${mul_result}</span> 🧪 `, 5); // Increased delay here
+            print_with_delay(`Dividing the stars... Quotient: ${div_result.toFixed(2)} ➗`, 5); // Increased delay here
+            print_with_delay(`Unlocking the cosmic vault..... The remainder is: ${mod_result} 💰`, 5); // Increased delay here
+
+            print_with_delay("By the laughter of the jesters, the calculations are deemed correct! 🤣", 5); // Increased delay here
+            print_with_delay("Bye g2g Imma hungry now👋🥗", 6); // Increased delay here
+            print_with_delay("I told you 'bye,' what are you still doing here? 🙄 Maybe I should code a door for you. 🚪😄", 11); // Increased delay here
+        });
+    </script>
+</body>
+</html>
